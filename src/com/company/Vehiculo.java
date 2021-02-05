@@ -11,9 +11,9 @@ public class Vehiculo {
     private String tipoDeVehiculo;
     private List <String> autorizados;
 
-    private Propietario propietario;
+    private Persona propietario;
 
-    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<String> autorizados, Propietario propietario) {
+    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<String> autorizados, Persona propietario) {
         this.numeroPatente = numeroPatente;
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
@@ -62,11 +62,11 @@ public class Vehiculo {
         this.autorizados = autorizados;
     }
 
-    public Propietario getPropietario() {
+    public Persona getPropietario() {
         return propietario;
     }
 
-    public void setPropietario(Propietario propietario) {
+    public void setPropietario(Persona propietario) {
         this.propietario = propietario;
     }
 }

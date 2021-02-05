@@ -1,12 +1,12 @@
 package com.company;
 
-public class Propietario {
+public class Persona {
 
     private String nombre;
     private String direccion;
     private String id;
 
-    public Propietario(String nombre, String direccion, String id) {
+    public Persona(String nombre, String direccion, String id) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.id = id;
