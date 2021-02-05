@@ -9,11 +9,11 @@ public class Vehiculo {
     private String tipoDeUso;
     private String sucursal;
     private String tipoDeVehiculo;
-    private List <String> autorizados;
+    private List <Persona> autorizados;
 
     private Persona propietario;
 
-    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<String> autorizados, Persona propietario) {
+    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario) {
         this.numeroPatente = numeroPatente;
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
@@ -54,11 +54,11 @@ public class Vehiculo {
         this.tipoDeVehiculo = tipoDeVehiculo;
     }
 
-    public List<String> getAutorizados() {
+    public List<Persona> getAutorizados() {
         return autorizados;
     }
 
-    public void setAutorizados(List<String> autorizados) {
+    public void setAutorizados(List<Persona> autorizados) {
         this.autorizados = autorizados;
     }
 
