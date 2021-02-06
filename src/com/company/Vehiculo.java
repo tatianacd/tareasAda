@@ -10,7 +10,6 @@ public class Vehiculo {
     private String sucursal;
     private String tipoDeVehiculo;
     private List <Persona> autorizados;
-
     private Persona propietario;
 
     public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario) {
@@ -18,7 +17,7 @@ public class Vehiculo {
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
         this.tipoDeVehiculo = tipoDeVehiculo;
-        this.autorizados = new ArrayList<>();
+        this.autorizados = autorizados;
         this.propietario = propietario;
     }
 
@@ -69,4 +68,6 @@ public class Vehiculo {
     public void setPropietario(Persona propietario) {
         this.propietario = propietario;
     }
+
+
 }
