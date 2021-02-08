@@ -22,7 +22,9 @@ public class DNRPA {
 //lista los vehiculos de forma general
     public void listarVehiculos() {
         String autorizados;
+        System.out.println("--------------------------------------Listado general de vehiculos-----------------------------");
         for (Vehiculo vehiculo : this.getRegistros()) {
+
             System.out.println("Numero de patente: " + vehiculo.getNumeroPatente() +
                     " Tipo de uso: " + vehiculo.getTipoDeUso() + " Sucursal: " + vehiculo.getSucursal() + " Tipo de vehiculo: " + vehiculo.getTipoDeVehiculo());
 
@@ -33,6 +35,7 @@ public class DNRPA {
             }
 
             System.out.println(autorizados);
+            System.out.println("------------------------------------------------------------------------------------------------");
         }
     }
 //devuelve un arreglo de tipo String dde los propietarios de camiones
@@ -51,9 +54,11 @@ public class DNRPA {
         ArrayList<String> nombres = this.listarPropietariosCamiones();
         Collections.sort(nombres);
         System.out.println("lista de propietarios de camiones ordenados: ");
+        System.out.println("------------------------------------------------------");
         for(int contador = 0; contador < nombres.size(); contador++){
 
             System.out.println( nombres.get(contador));
+            System.out.println("-----------------------------------------------------");
         }
     }
 
@@ -79,10 +84,10 @@ public class DNRPA {
         Persona propietario4 = new Persona("Isa DC", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
 
         Vehiculo vehiculo = new Vehiculo("patTCD992", "particular", "parrita", "electrico", autorizados1, propietario);
-        Vehiculo vehiculo1 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados, propietario1);
-        Vehiculo vehiculo2 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados1, propietario2);
-        Vehiculo vehiculo3 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados, propietario3);
-        Vehiculo vehiculo4 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados1, propietario4);
+        Vehiculo vehiculo1 = new Vehiculo("patTCD999", "particular", "parrita", "camion", autorizados, propietario1);
+        Vehiculo vehiculo2 = new Vehiculo("patTCD990", "particular", "parrita", "camion", autorizados1, propietario2);
+        Vehiculo vehiculo3 = new Vehiculo("patTCD993", "particular", "parrita", "camion", autorizados, propietario3);
+        Vehiculo vehiculo4 = new Vehiculo("patTCD997", "particular", "parrita", "camion", autorizados1, propietario4);
 
         vehiculos.add(vehiculo);
         vehiculos.add(vehiculo1);
