@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//modelo vehiculo
 public class Vehiculo {
 
     private String numeroPatente;

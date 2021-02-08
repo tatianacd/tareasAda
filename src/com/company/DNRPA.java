@@ -19,7 +19,7 @@ public class DNRPA {
     public List<Vehiculo> getRegistros() {
         return this.vehiculos;
     }
-
+//lista los vehiculos de forma general
     public void listarVehiculos() {
         String autorizados;
         for (Vehiculo vehiculo : this.getRegistros()) {
@@ -35,7 +35,7 @@ public class DNRPA {
             System.out.println(autorizados);
         }
     }
-
+//devuelve un arreglo de tipo String dde los propietarios de camiones
     public ArrayList<String> listarPropietariosCamiones(){
         ArrayList<String> propietariosDeCamiones = new ArrayList<>();
 
@@ -46,7 +46,7 @@ public class DNRPA {
         }
         return propietariosDeCamiones;
     }
-
+//ordena por nombre de forma alfabetica los propietarios de camiones
     public void propietariosDeCamionesOrdenados(){
         ArrayList<String> nombres = this.listarPropietariosCamiones();
         Collections.sort(nombres);
@@ -59,7 +59,7 @@ public class DNRPA {
 
     public static void main(String[] args) {
         // write your code here
-
+        //metodo main, pruebas
         List<Persona> autorizados = new ArrayList<>();
         List<Persona> autorizados1 = new ArrayList<>();
         List<Vehiculo> vehiculos = new ArrayList<>();

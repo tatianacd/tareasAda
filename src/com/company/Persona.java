@@ -1,7 +1,7 @@
 package com.company;
 
 public class Persona {
-
+//modelo persona
     private String nombre;
     private String direccion;
     private String id;
