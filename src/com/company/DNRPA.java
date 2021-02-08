@@ -1,5 +1,6 @@
 package com.company;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,11 +23,11 @@ public class DNRPA {
 //lista los vehiculos de forma general
     public void listarVehiculos() {
         String autorizados;
-        System.out.println("--------------------------------------Listado general de vehiculos-----------------------------");
+        System.out.println("-------------------------------------------------------Listado general de vehiculos-----------------------------------------------");
         for (Vehiculo vehiculo : this.getRegistros()) {
 
             System.out.println("Numero de patente: " + vehiculo.getNumeroPatente() +
-                    " Tipo de uso: " + vehiculo.getTipoDeUso() + " Sucursal: " + vehiculo.getSucursal() + " Tipo de vehiculo: " + vehiculo.getTipoDeVehiculo());
+                  "Nnombre de propietario: " + vehiculo.getPropietario().getNombre() + " Tipo de uso: " + vehiculo.getTipoDeUso() + " Sucursal: " + vehiculo.getSucursal() + " Tipo de vehiculo: " + vehiculo.getTipoDeVehiculo() + " Fecha de registro: " + vehiculo.getFechaDeRegistro());
 
             autorizados = " Autorizados: ";
 
@@ -35,7 +36,7 @@ public class DNRPA {
             }
 
             System.out.println(autorizados);
-            System.out.println("------------------------------------------------------------------------------------------------");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
         }
     }
 //devuelve un arreglo de tipo String dde los propietarios de camiones
@@ -83,12 +84,12 @@ public class DNRPA {
         Persona propietario3 = new Persona("NCK GS", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
         Persona propietario4 = new Persona("Isa DC", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
 
-        Vehiculo vehiculo = new Vehiculo("patTCD992", "particular", "parrita", "electrico", autorizados1, propietario);
-        Vehiculo vehiculo1 = new Vehiculo("patTCD999", "particular", "parrita", "camion", autorizados, propietario1);
-        Vehiculo vehiculo2 = new Vehiculo("patTCD990", "particular", "parrita", "camion", autorizados1, propietario2);
-        Vehiculo vehiculo3 = new Vehiculo("patTCD993", "particular", "parrita", "camion", autorizados, propietario3);
-        Vehiculo vehiculo4 = new Vehiculo("patTCD997", "particular", "parrita", "camion", autorizados1, propietario4);
-
+        Vehiculo vehiculo = new Vehiculo("patTCD992", "particular", "parrita", "electrico", autorizados1, propietario, LocalDate.now());
+        Vehiculo vehiculo1 = new Vehiculo("patTCD999", "particular", "parrita", "camion", autorizados, propietario1, LocalDate.now());
+        Vehiculo vehiculo2 = new Vehiculo("patTCD990", "particular", "parrita", "camion", autorizados1, propietario2, LocalDate.now());
+        Vehiculo vehiculo3 = new Vehiculo("patTCD993", "particular", "parrita", "camion", autorizados, propietario3, LocalDate.now());
+        Vehiculo vehiculo4 = new Vehiculo("patTCD997", "particular", "parrita", "camion", autorizados1, propietario4, LocalDate.now());
+        vehiculo.setPropietario(new Persona("dayana", "125 los angeles", "123456789"));
         vehiculos.add(vehiculo);
         vehiculos.add(vehiculo1);
         vehiculos.add(vehiculo2);
@@ -100,6 +101,7 @@ public class DNRPA {
         dnrpa.listarVehiculos();
         dnrpa.listarPropietariosCamiones();
         dnrpa.propietariosDeCamionesOrdenados();
+
 
 
     }

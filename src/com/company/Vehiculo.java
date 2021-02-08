@@ -1,6 +1,8 @@
 package com.company;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 //modelo vehiculo
 public class Vehiculo {
@@ -11,14 +13,16 @@ public class Vehiculo {
     private String tipoDeVehiculo;
     private List <Persona> autorizados;
     private Persona propietario;
+    private LocalDate fechaDeRegistro;
 
-    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario) {
+    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario, LocalDate fechaDeRegistro) {
         this.numeroPatente = numeroPatente;
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
         this.tipoDeVehiculo = tipoDeVehiculo;
         this.autorizados = autorizados;
         this.propietario = propietario;
+        this.fechaDeRegistro = fechaDeRegistro;
     }
 
     public String getNumeroPatente() {
@@ -69,5 +73,11 @@ public class Vehiculo {
         this.propietario = propietario;
     }
 
+    public LocalDate getFechaDeRegistro() {
+        return fechaDeRegistro;
+    }
 
+    public void setFechaDeRegistro(LocalDate fechaDeRegistro) {
+        this.fechaDeRegistro = fechaDeRegistro;
+    }
 }
