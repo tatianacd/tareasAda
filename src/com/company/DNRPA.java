@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DNRPA {
@@ -35,26 +36,65 @@ public class DNRPA {
         }
     }
 
+    public ArrayList<String> listarPropietariosCamiones(){
+        ArrayList<String> propietariosDeCamiones = new ArrayList<>();
+
+        for(Vehiculo vehiculo : this.getRegistros()) {
+           if(vehiculo.getTipoDeVehiculo().equals("camion")){
+               propietariosDeCamiones.add(vehiculo.getPropietario().getNombre());
+           }
+        }
+        return propietariosDeCamiones;
+    }
+
+    public void propietariosDeCamionesOrdenados(){
+        ArrayList<String> nombres = this.listarPropietariosCamiones();
+        Collections.sort(nombres);
+        System.out.println("lista de propietarios de camiones ordenados: ");
+        for(int contador = 0; contador < nombres.size(); contador++){
+
+            System.out.println( nombres.get(contador));
+        }
+    }
 
     public static void main(String[] args) {
         // write your code here
 
         List<Persona> autorizados = new ArrayList<>();
+        List<Persona> autorizados1 = new ArrayList<>();
         List<Vehiculo> vehiculos = new ArrayList<>();
 
         autorizados.add(new Persona("Nick Gonzalez Sequeira", "150 metros sur del cementerio", "603840256"));
         autorizados.add(new Persona("Isabel Duran Calderon", "150 metros sur del cementerio", "603840256"));
         autorizados.add(new Persona("Marcos Cespedes Espinoza", "150 metros sur del cementerio", "603840256"));
 
-        Persona propietario = new Persona("Tatiana Cespedes Duran", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
+        autorizados1.add(new Persona("Agustina", "150 metros sur del cementerio", "603840256"));
+        autorizados1.add(new Persona("Fernanda", "150 metros sur del cementerio", "603840256"));
+        autorizados1.add(new Persona("Nick GS", "150 metros sur del cementerio", "603840256"));
 
-        Vehiculo vehiculo = new Vehiculo("patTCD992", "particular", "parrita", "electrico", autorizados, propietario);
+        Persona propietario = new Persona("Tatiana Cespedes Duran", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
+        Persona propietario1 = new Persona("zTatiana C D", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
+        Persona propietario2 = new Persona("Marcos Cespedes Espinoza", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
+        Persona propietario3 = new Persona("NCK GS", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
+        Persona propietario4 = new Persona("Isa DC", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
+
+        Vehiculo vehiculo = new Vehiculo("patTCD992", "particular", "parrita", "electrico", autorizados1, propietario);
+        Vehiculo vehiculo1 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados, propietario1);
+        Vehiculo vehiculo2 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados1, propietario2);
+        Vehiculo vehiculo3 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados, propietario3);
+        Vehiculo vehiculo4 = new Vehiculo("patTCD992", "particular", "parrita", "camion", autorizados1, propietario4);
 
         vehiculos.add(vehiculo);
+        vehiculos.add(vehiculo1);
+        vehiculos.add(vehiculo2);
+        vehiculos.add(vehiculo3);
+        vehiculos.add(vehiculo4);
 
         DNRPA dnrpa = new DNRPA(vehiculos);
 
         dnrpa.listarVehiculos();
+        dnrpa.listarPropietariosCamiones();
+        dnrpa.propietariosDeCamionesOrdenados();
 
 
     }
