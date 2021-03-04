@@ -1,10 +1,9 @@
 package com.company;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-//modelo vehiculo
+import java.util.Random;
+
 public class Vehiculo {
 
     private String numeroPatente;
@@ -15,8 +14,8 @@ public class Vehiculo {
     private Persona propietario;
     private LocalDate fechaDeRegistro;
 
-    public Vehiculo(String numeroPatente, String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario, LocalDate fechaDeRegistro) {
-        this.numeroPatente = numeroPatente;
+    public Vehiculo(String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario, LocalDate fechaDeRegistro) {
+        this.numeroPatente = generarPlaca();
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
         this.tipoDeVehiculo = tipoDeVehiculo;
@@ -79,5 +78,25 @@ public class Vehiculo {
 
     public void setFechaDeRegistro(LocalDate fechaDeRegistro) {
         this.fechaDeRegistro = fechaDeRegistro;
+    }
+
+    private String generarPlaca() {
+        Random aleatorio = new Random(System.nanoTime());
+        int enteroRandom = 1 + aleatorio.nextInt(1000000000);
+        String placa = String.valueOf(enteroRandom);
+        return "TCD-" + placa;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "numeroPatente='" + numeroPatente + '\'' +
+                ", tipoDeUso='" + tipoDeUso + '\'' +
+                ", sucursal='" + sucursal + '\'' +
+                ", tipoDeVehiculo='" + tipoDeVehiculo + '\'' +
+                ", autorizados=" + autorizados +
+                ", propietario=" + propietario +
+                ", fechaDeRegistro=" + fechaDeRegistro +
+                '}';
     }
 }
