@@ -111,14 +111,14 @@ public class DNRPA {
         Persona propietario3 = new Persona("NCK GS", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
         Persona propietario4 = new Persona("Isa DC", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
 
-        Vehiculo vehiculo = new Vehiculo("particular", "parrita", "electrico", autorizados1, propietario, LocalDate.now());
+        Vehiculo vehiculo = new Vehiculo("particular", "parrita", "electrico", autorizados1, propietario, LocalDate.of(2020,02,02));
         Vehiculo vehiculo1 = new Vehiculo("particular", "parrita", "camion", autorizados, propietario1, LocalDate.now());
         Vehiculo vehiculo2 = new Vehiculo("particular", "parrita", "camion", autorizados1, propietario2, LocalDate.now());
         Vehiculo vehiculo3 = new Vehiculo("particular", "parrita", "camion", autorizados, propietario3, LocalDate.now());
         Vehiculo vehiculo4 = new Vehiculo("particular", "parrita", "camion", autorizados1, propietario4, LocalDate.now());
 
         vehiculo.setPropietario(new Persona("dayana", "125 los angeles", "123456789"));
-        vehiculo.setFechaDeRegistro(LocalDate.now());
+        //vehiculo.setFechaDeRegistro(LocalDate.now());
 
         vehiculos.add(vehiculo);
         vehiculos.add(vehiculo1);
@@ -137,6 +137,6 @@ public class DNRPA {
         }
 
 
-        //System.out.println("vehiculo " + vehiculo);
+        dnrpa.siPasoUnAño();
     }
 }
