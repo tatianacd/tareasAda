@@ -1,10 +1,7 @@
 package com.company;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class DNRPA {
 
@@ -17,6 +14,8 @@ public class DNRPA {
     public DNRPA(List<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
     }
+
+    Scanner scanner = new Scanner(System.in);
 
     public List<Vehiculo> getRegistros() {
         return this.vehiculos;
@@ -67,6 +66,29 @@ public class DNRPA {
         }
     }
 
+    public void siPasoUnAño() {
+        System.out.println("Ingrese el numero de patente: ");
+        String numeroPatente = scanner.next();
+        for (Vehiculo vehiculo : vehiculos) {
+            if (numeroPatente.equalsIgnoreCase(vehiculo.getNumeroPatente())) {
+                if (LocalDate.now().isLeapYear()) {
+                    if (vehiculo.getFechaDeRegistro().getYear() < LocalDate.now().getYear()) {
+                        System.out.println("Ya paso un año");
+                    } else {
+                        System.out.println("no ha pasado un año");
+                    }
+
+                } else{
+                    if(vehiculo.getFechaDeRegistro().getYear() < LocalDate.now().getYear()){
+                        System.out.println("ya paso un año desde que se registró");
+                    }else{
+                        System.out.println("No ha pasado un año");
+                    }
+                }
+            }
+        }
+
+    }
 
     public static void main(String[] args) {
         // write your code here
@@ -110,7 +132,7 @@ public class DNRPA {
         dnrpa.listarPropietariosCamiones();
         dnrpa.propietariosDeCamionesOrdenados();
 
-        for(Vehiculo vehiculo5 :vehiculos ){
+        for (Vehiculo vehiculo5 : vehiculos) {
             System.out.println(vehiculo5);
         }
 
