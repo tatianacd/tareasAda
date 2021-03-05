@@ -78,13 +78,15 @@ public class DNRPA {
                         System.out.println("no ha pasado un año");
                     }
 
-                } else{
-                    if(vehiculo.getFechaDeRegistro().getYear() < LocalDate.now().getYear()){
+                } else {
+                    if (vehiculo.getFechaDeRegistro().getYear() < LocalDate.now().getYear()) {
                         System.out.println("ya paso un año desde que se registró");
-                    }else{
+                    } else {
                         System.out.println("No ha pasado un año");
                     }
                 }
+            } else {
+                System.out.println("Numero de patente no encontrado.");
             }
         }
 
@@ -111,7 +113,7 @@ public class DNRPA {
         Persona propietario3 = new Persona("NCK GS", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
         Persona propietario4 = new Persona("Isa DC", "150 metros sur del cementerio municipal,Mojon, Esparza, Puntarenas", "114890090");
 
-        Vehiculo vehiculo = new Vehiculo("particular", "parrita", "electrico", autorizados1, propietario, LocalDate.of(2020,02,02));
+        Vehiculo vehiculo = new Vehiculo("particular", "parrita", "electrico", autorizados1, propietario, LocalDate.of(2020, 02, 02));
         Vehiculo vehiculo1 = new Vehiculo("particular", "parrita", "camion", autorizados, propietario1, LocalDate.now());
         Vehiculo vehiculo2 = new Vehiculo("particular", "parrita", "camion", autorizados1, propietario2, LocalDate.now());
         Vehiculo vehiculo3 = new Vehiculo("particular", "parrita", "camion", autorizados, propietario3, LocalDate.now());
