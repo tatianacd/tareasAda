@@ -10,7 +10,7 @@ public class Vehiculo {
     private String tipoDeUso;
     private String sucursal;
     private String tipoDeVehiculo;
-    private List <Persona> autorizados;
+    private List<Persona> autorizados;
     private Persona propietario;
     private LocalDate fechaDeRegistro;
 
