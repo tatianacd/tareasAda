@@ -1,7 +1,6 @@
 package com.company;
 
-public class Persona {
-    //modelo persona
+public abstract class Persona {
     private String nombre;
     private String direccion;
     private String id;
@@ -37,5 +36,12 @@ public class Persona {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                '}';
     }
 }

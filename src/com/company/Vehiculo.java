@@ -4,21 +4,19 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 
     private String numeroPatente;
-    private String tipoDeUso;
     private String sucursal;
-    private String tipoDeVehiculo;
-    private List<Persona> autorizados;
-    private Persona propietario;
+    private TipoDeUso tipoDeUso;
+    private List<Autorizado> autorizados;
+    private Propietario propietario;
     private LocalDate fechaDeRegistro;
 
-    public Vehiculo(String tipoDeUso, String sucursal, String tipoDeVehiculo, List<Persona> autorizados, Persona propietario, LocalDate fechaDeRegistro) {
+    public Vehiculo(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro) {
         this.numeroPatente = generarPlaca();
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
-        this.tipoDeVehiculo = tipoDeVehiculo;
         this.autorizados = autorizados;
         this.propietario = propietario;
         this.fechaDeRegistro = fechaDeRegistro;
@@ -32,12 +30,12 @@ public class Vehiculo {
         this.numeroPatente = numeroPatente;
     }
 
-    public String getTipoDeUso() {
-        return tipoDeUso;
+    public void setTipoDeUso(TipoDeUso tipoDeUso) {
+        this.tipoDeUso = tipoDeUso;
     }
 
-    public void setTipoDeUso(String tipoDeUso) {
-        this.tipoDeUso = tipoDeUso;
+    public TipoDeUso getTipoDeUso() {
+        return tipoDeUso;
     }
 
     public String getSucursal() {
@@ -48,19 +46,11 @@ public class Vehiculo {
         this.sucursal = sucursal;
     }
 
-    public String getTipoDeVehiculo() {
-        return tipoDeVehiculo;
-    }
-
-    public void setTipoDeVehiculo(String tipoDeVehiculo) {
-        this.tipoDeVehiculo = tipoDeVehiculo;
-    }
-
-    public List<Persona> getAutorizados() {
+    public List<Autorizado> getAutorizados() {
         return autorizados;
     }
 
-    public void setAutorizados(List<Persona> autorizados) {
+    public void setAutorizados(List<Autorizado> autorizados) {
         this.autorizados = autorizados;
     }
 
@@ -68,7 +58,7 @@ public class Vehiculo {
         return propietario;
     }
 
-    public void setPropietario(Persona propietario) {
+    public void setPropietario(Propietario propietario) {
         this.propietario = propietario;
     }
 
@@ -84,7 +74,7 @@ public class Vehiculo {
         Random aleatorio = new Random(System.nanoTime());
         int enteroRandom = 1 + aleatorio.nextInt(1000000000);
         String placa = String.valueOf(enteroRandom);
-        return "TCD-" + placa;
+        return "TCD" + placa;
     }
 
     @Override
@@ -93,7 +83,6 @@ public class Vehiculo {
                 "numeroPatente='" + numeroPatente + '\'' +
                 ", tipoDeUso='" + tipoDeUso + '\'' +
                 ", sucursal='" + sucursal + '\'' +
-                ", tipoDeVehiculo='" + tipoDeVehiculo + '\'' +
                 ", autorizados=" + autorizados +
                 ", propietario=" + propietario +
                 ", fechaDeRegistro=" + fechaDeRegistro +
