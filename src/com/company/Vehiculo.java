@@ -1,25 +1,38 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public abstract class Vehiculo {
 
     private String numeroPatente;
-    private String sucursal;
+    private Sucursal sucursal;
     private TipoDeUso tipoDeUso;
     private List<Autorizado> autorizados;
     private Propietario propietario;
     private LocalDate fechaDeRegistro;
 
-    public Vehiculo(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro) {
+    public Vehiculo(Sucursal sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro) {
         this.numeroPatente = generarPlaca();
         this.tipoDeUso = tipoDeUso;
         this.sucursal = sucursal;
         this.autorizados = autorizados;
         this.propietario = propietario;
         this.fechaDeRegistro = fechaDeRegistro;
+    }
+
+    public Vehiculo() {
+
+        this.numeroPatente = generarPlaca();
+        this.tipoDeUso = this.tipoDeUso.PROFESIONAL;
+        this.sucursal = this.sucursal.Hogwarts;
+        this.autorizados = new ArrayList<>();
+        this.propietario = new Propietario();
+        this.fechaDeRegistro = LocalDate.now();
+
+
     }
 
     public String getNumeroPatente() {
@@ -38,11 +51,11 @@ public abstract class Vehiculo {
         return tipoDeUso;
     }
 
-    public String getSucursal() {
+    public Sucursal getSucursal() {
         return sucursal;
     }
 
-    public void setSucursal(String sucursal) {
+    public void setSucursal(Sucursal sucursal) {
         this.sucursal = sucursal;
     }
 

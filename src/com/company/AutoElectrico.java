@@ -8,12 +8,18 @@ public class AutoElectrico extends Vehiculo implements  IVehiculoElectrico{
     private String amperage;
     private String autonomia;
 
-    public AutoElectrico(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, String amperage, String autonomia){
+    public AutoElectrico(Sucursal sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, String amperage, String autonomia){
        super(sucursal, tipoDeUso, autorizados, propietario, fechaDeRegistro);
 
         this.amperage = amperage;
         this.autonomia = autonomia;
 
+    }
+
+    public AutoElectrico() {
+        super();
+        this.amperage = "";
+        this.autonomia = "";
     }
 
     @Override

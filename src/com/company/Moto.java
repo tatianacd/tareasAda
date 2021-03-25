@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Moto extends Vehiculo implements IVehiculoACombustion, IMoto{
 
-    private String tipodeDeCombustible;
-    private String tipoDeEnfriamiento;
+    private TipoDeCombustible tipodeDeCombustible;
+    private TipoDeEnfriamiento tipoDeEnfriamiento;
     private PosicionDelConductor posicionDelConductor;
 
-    public Moto(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, String tipoDeCombustible, String tipoDeEnfriamiento, PosicionDelConductor posicionDelConductor){
+    public Moto(Sucursal sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, TipoDeCombustible tipoDeCombustible, TipoDeEnfriamiento tipoDeEnfriamiento, PosicionDelConductor posicionDelConductor){
       super(sucursal, tipoDeUso,autorizados, propietario,fechaDeRegistro);
       this.tipoDeEnfriamiento = tipoDeEnfriamiento;
       this.tipodeDeCombustible = tipoDeCombustible;
@@ -18,23 +18,23 @@ public class Moto extends Vehiculo implements IVehiculoACombustion, IMoto{
     }
 
     @Override
-    public void setTipoDeCombustible(String tipoDeCombustible) {
+    public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible) {
         this.tipodeDeCombustible = tipoDeCombustible;
 
     }
 
     @Override
-    public String getTipoDeCombustible() {
+    public TipoDeCombustible getTipoDeCombustible() {
         return tipodeDeCombustible;
     }
 
     @Override
-    public void setTipoDeEnfriamiento(String tipoDeEnfriamiento) {
+    public void setTipoDeEnfriamiento(TipoDeEnfriamiento tipoDeEnfriamiento) {
         this.tipoDeEnfriamiento = tipoDeEnfriamiento;
     }
 
     @Override
-    public String getTipoDeEnfriamiento() {
+    public TipoDeEnfriamiento getTipoDeEnfriamiento() {
         return tipoDeEnfriamiento;
     }
 

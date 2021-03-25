@@ -4,33 +4,39 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class AutoACombustion extends Vehiculo implements IVehiculoACombustion{
-    private String tipoDeCombustible;
-    private String tipoDeEnfriamiento;
-    public AutoACombustion(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, String tipoDeCombustible,String tipoDeEnfriamiento){
+    private TipoDeCombustible tipoDeCombustible;
+    private TipoDeEnfriamiento tipoDeEnfriamiento;
+    public AutoACombustion(Sucursal sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, TipoDeCombustible tipoDeCombustible, TipoDeEnfriamiento tipoDeEnfriamiento){
         super(sucursal,tipoDeUso, autorizados, propietario, fechaDeRegistro);
         this.tipoDeCombustible = tipoDeCombustible;
         this.tipoDeEnfriamiento = tipoDeEnfriamiento;
     }
 
+    public AutoACombustion() {
+        super();
+        this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
+        this.tipoDeCombustible = TipoDeCombustible.Petroleo;
+    }
+
     @Override
-    public void setTipoDeCombustible(String tipoDeCombustible) {
+    public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible) {
         this.tipoDeCombustible = tipoDeCombustible;
 
     }
 
     @Override
-    public String getTipoDeCombustible() {
+    public TipoDeCombustible getTipoDeCombustible() {
         return tipoDeCombustible;
     }
 
     @Override
-    public void setTipoDeEnfriamiento(String tipoDeEnfriamiento) {
+    public void setTipoDeEnfriamiento(TipoDeEnfriamiento tipoDeEnfriamiento) {
         this.tipoDeEnfriamiento = tipoDeEnfriamiento;
 
     }
 
     @Override
-    public String getTipoDeEnfriamiento() {
+    public TipoDeEnfriamiento getTipoDeEnfriamiento() {
         return tipoDeEnfriamiento;
     }
 

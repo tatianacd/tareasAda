@@ -2,8 +2,8 @@ package com.company;
 
 public interface IVehiculoACombustion {
 
-    public void setTipoDeCombustible(String tipoDeCombustible);
-    public String getTipoDeCombustible();
-    public void setTipoDeEnfriamiento(String tipoDeEnfriamiento);
-    public String getTipoDeEnfriamiento();
+    public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible);
+    public TipoDeCombustible getTipoDeCombustible();
+    public void setTipoDeEnfriamiento(TipoDeEnfriamiento tipoDeEnfriamiento);
+    public TipoDeEnfriamiento getTipoDeEnfriamiento();
 }

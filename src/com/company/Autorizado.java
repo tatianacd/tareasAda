@@ -11,5 +11,16 @@ public class Autorizado extends Persona {
 
     }
 
+    public Autorizado(){
+        super();
+    }
 
+    public String toString() {
+       return "Autorizado (" +
+                "nombre = " + getNombre() +
+                "direccion = " + getDireccion() +
+                "id = " + getId() +
+
+                ')';
+    }
 }

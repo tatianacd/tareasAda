@@ -6,10 +6,10 @@ import java.util.List;
 public class Camion extends Vehiculo implements IVehiculoACombustion {
     private int cantidadDeEjes;
     private TipoDeCamion tipoDeCamion;
-    private String tipoDeCombustible;
-    private String tipoDeEnfriamiento;
+    private TipoDeCombustible tipoDeCombustible;
+    private TipoDeEnfriamiento tipoDeEnfriamiento;
 
-    public Camion(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, int cantidadDeEjes, TipoDeCamion tipoDeCamion, String tipoDeEnfriamiento,String tipoDeCombustible) {
+    public Camion(Sucursal sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, int cantidadDeEjes, TipoDeCamion tipoDeCamion, TipoDeEnfriamiento tipoDeEnfriamiento, TipoDeCombustible tipoDeCombustible) {
         super(sucursal, tipoDeUso, autorizados, propietario, fechaDeRegistro);
         this.tipoDeEnfriamiento = tipoDeEnfriamiento;
         this.tipoDeCombustible = tipoDeCombustible;
@@ -17,23 +17,31 @@ public class Camion extends Vehiculo implements IVehiculoACombustion {
         this.tipoDeCamion = tipoDeCamion;
     }
 
+    public Camion() {
+        super();
+        this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
+        this.tipoDeCombustible = TipoDeCombustible.Carbon;
+        this.cantidadDeEjes = 0;
+        this.tipoDeCamion = TipoDeCamion.RIGIDO;
+    }
+
     @Override
-    public void setTipoDeCombustible(String tipoDeCombustible) {
+    public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible) {
         this.tipoDeCombustible = tipoDeCombustible;
     }
 
     @Override
-    public String getTipoDeCombustible() {
+    public TipoDeCombustible getTipoDeCombustible() {
         return tipoDeCombustible;
     }
 
     @Override
-    public void setTipoDeEnfriamiento(String tipoDeEnfriamiento) {
+    public void setTipoDeEnfriamiento(TipoDeEnfriamiento tipoDeEnfriamiento) {
         this.tipoDeEnfriamiento = tipoDeEnfriamiento;
     }
 
     @Override
-    public String getTipoDeEnfriamiento() {
+    public TipoDeEnfriamiento getTipoDeEnfriamiento() {
         return tipoDeEnfriamiento;
     }
 

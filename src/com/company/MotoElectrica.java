@@ -8,7 +8,7 @@ public class MotoElectrica extends Vehiculo implements IVehiculoElectrico, IMoto
     private String autonomia;
     private PosicionDelConductor posicionDelConductor;
 
-    public MotoElectrica(String sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro,String amperage, String autonomia, PosicionDelConductor posicionDelConductor){
+    public MotoElectrica(Sucursal sucursal, TipoDeUso tipoDeUso, List<Autorizado> autorizados, Propietario propietario, LocalDate fechaDeRegistro, String amperage, String autonomia, PosicionDelConductor posicionDelConductor){
         super(sucursal, tipoDeUso, autorizados, propietario, fechaDeRegistro);
         this.amperage = amperage;
         this.autonomia = autonomia;

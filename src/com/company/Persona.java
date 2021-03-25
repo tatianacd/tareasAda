@@ -12,6 +12,9 @@ public abstract class Persona {
     }
 
     public Persona() {
+        this.nombre = "";
+        this.direccion = "";
+        this.id = "";
     }
 
     public String getNombre() {
@@ -38,10 +41,4 @@ public abstract class Persona {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                '}';
-    }
 }

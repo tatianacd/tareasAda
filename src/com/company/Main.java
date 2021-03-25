@@ -30,28 +30,27 @@ public class Main {
 
         //vehiculo.setFechaDeRegistro(LocalDate.now());
 
-        Camion camion = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario1, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
-        Camion camion1 = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario3, LocalDate.of(2021,8,17), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
-        Camion camion2 = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario2, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
-        Camion camion3 = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario7, LocalDate.of(2020,11,21), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
-        Camion camion4 = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario8, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
-        Camion camion5 = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario6, LocalDate.of(2021,03,1), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
-        Camion camion6 = new Camion("parrita", TipoDeUso.PARTICULAR, autorizados, propietario5, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, "agua", "gasolina");
+        Camion camion = new Camion(Sucursal.Hogwarts, TipoDeUso.PARTICULAR, autorizados, propietario1, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
+        Camion camion1 = new Camion(Sucursal.San_Diego, TipoDeUso.PARTICULAR, autorizados, propietario3, LocalDate.of(2021,8,17), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
+        Camion camion2 = new Camion(Sucursal.Amazonas, TipoDeUso.PARTICULAR, autorizados, propietario2, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
+        Camion camion3 = new Camion(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario7, LocalDate.of(2020,11,21), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
+        Camion camion4 = new Camion(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario8, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
+        Camion camion5 = new Camion(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario6, LocalDate.of(2021,03,1), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
+        Camion camion6 = new Camion(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario5, LocalDate.now(), 3, TipoDeCamion.ARTICULADO, TipoDeEnfriamiento.POR_ACEITE, TipoDeCombustible.Petroleo);
 
-        AutoElectrico autoElectrico = new AutoElectrico("quepos", TipoDeUso.PROFESIONAL, autorizados1, propietario8, LocalDate.of(2020,12,21), "200v", "300km");
-        AutoElectrico autoElectrico1 = new AutoElectrico("quepos", TipoDeUso.PROFESIONAL, autorizados1, propietario8, LocalDate.now(), "200v", "300km");
+        AutoElectrico autoElectrico = new AutoElectrico(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario8, LocalDate.of(2020,12,21), "200v", "300km");
+        AutoElectrico autoElectrico1 = new AutoElectrico(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario8, LocalDate.now(), "200v", "300km");
 
-        Moto moto = new Moto("turrialba", TipoDeUso.PARTICULAR, autorizados1, propietario7, LocalDate.now(), "diesel", "agua", PosicionDelConductor.POSICION_ESTANDAR);
-        Moto moto1 = new Moto("turrialba", TipoDeUso.PROFESIONAL, autorizados1, propietario6, LocalDate.of(2021,02,11), "gas natural", "aire", PosicionDelConductor.CONDUCCION_DEPORTIVA);
+        Moto moto = new Moto(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados1, propietario7, LocalDate.now(), TipoDeCombustible.Carbon, TipoDeEnfriamiento.POR_ACEITE, PosicionDelConductor.POSICION_ESTANDAR);
+       //Moto moto1 = new Moto(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario6, LocalDate.of(2021,02,11), TipoDeCombustible.Carbon, TipoDeEnfriamiento.POR_ACEITE);
+       // MotoElectrica motoElectrica = new MotoElectrica(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario5, LocalDate.of(2015,9,12), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
+        MotoElectrica motoElectrica1 = new MotoElectrica(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.now(), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
 
-        MotoElectrica motoElectrica = new MotoElectrica("sinaloa", TipoDeUso.PARTICULAR, autorizados, propietario5, LocalDate.of(2015,9,12), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
-        MotoElectrica motoElectrica1 = new MotoElectrica("sinaloa", TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.now(), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
+        Colectivo colectivo = new Colectivo(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.of(2021,03,1), TipoDeCombustible.Petroleo, TipoDeEnfriamiento.POR_ACEITE, 22);
+        Colectivo colectivo1 = new Colectivo(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.now(), TipoDeCombustible.Petroleo, TipoDeEnfriamiento.POR_ACEITE, 55);
 
-        Colectivo colectivo = new Colectivo("disneylandia", TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.of(2021,03,1), "vapor", "hielo seco", 22);
-        Colectivo colectivo1 = new Colectivo("disneylandia", TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.now(), "queroseno", "helio", 55);
-
-        Utilitario utilitario = new Utilitario("Hogwarts", TipoDeUso.PROFESIONAL, autorizados1, propietario3, LocalDate.of(2018,03,19), "vapor", "neblina", "limitada");
-        Utilitario utilitario1 = new Utilitario("Hogwarts", TipoDeUso.PARTICULAR, autorizados, propietario6, LocalDate.now(), "gas natural", "bosque lluvioso", "liviana");
+        Utilitario utilitario = new Utilitario(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario3, LocalDate.of(2018,03,19), TipoDeCombustible.Petroleo, TipoDeEnfriamiento.POR_ACEITE, "limitada");
+        Utilitario utilitario1 = new Utilitario(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario6, LocalDate.now(), TipoDeCombustible.Petroleo, TipoDeEnfriamiento.POR_ACEITE, "liviana");
 
         vehiculos.add(camion);
         vehiculos.add(camion1);
@@ -65,9 +64,7 @@ public class Main {
         vehiculos.add(autoElectrico1);
 
         vehiculos.add(moto);
-        vehiculos.add(moto1);
 
-        vehiculos.add(motoElectrica);
         vehiculos.add(motoElectrica1);
 
         vehiculos.add(colectivo);
@@ -82,7 +79,7 @@ public class Main {
         dnrpa.listarPropietariosCamiones();
         dnrpa.propietariosDeCamionesOrdenados();
 
-        dnrpa.cambiarDePropietario();
+        dnrpa.registrarVehiculo();
 
 
     }
