@@ -296,6 +296,7 @@ public class DNRPA {
             System.out.println("4) Listar propietarios en orden alfabetico de camiones");
             System.out.println("5) Ver si paso un año desde que se registro un vehiculo");
             System.out.println("6) salir");
+            System.out.println("Opcion:");
             opcion = scanner.nextInt();
 
             switch (opcion) {
