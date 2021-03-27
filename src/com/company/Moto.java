@@ -17,6 +17,15 @@ public class Moto extends Vehiculo implements IVehiculoACombustion, IMoto{
 
     }
 
+    public Moto() throws DatosIncorrectosException{
+        super();
+        this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
+        this.tipodeDeCombustible = TipoDeCombustible.Petroleo;
+        this.posicionDelConductor = PosicionDelConductor.POSTURA_DE_CRUCERO;
+
+
+    }
+
     @Override
     public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible) {
         this.tipodeDeCombustible = tipoDeCombustible;

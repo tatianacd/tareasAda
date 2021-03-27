@@ -23,7 +23,7 @@ public abstract class Vehiculo {
         this.fechaDeRegistro = fechaDeRegistro;
     }
 
-    public Vehiculo() {
+    public Vehiculo() throws DatosIncorrectosException {
 
         this.numeroPatente = generarPlaca();
         this.tipoDeUso = this.tipoDeUso.PROFESIONAL;

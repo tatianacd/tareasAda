@@ -15,6 +15,14 @@ public class MotoElectrica extends Vehiculo implements IVehiculoElectrico, IMoto
         this.posicionDelConductor = posicionDelConductor;
     }
 
+    public MotoElectrica() throws DatosIncorrectosException{
+        super();
+        this.amperage = "";
+        this.autonomia = "";
+        this.posicionDelConductor = PosicionDelConductor.POSTURA_DE_CRUCERO;
+
+    }
+
     @Override
     public void setAutonomia(String autonomia) {
         this.autonomia = autonomia;

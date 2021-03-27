@@ -14,6 +14,15 @@ public class Colectivo extends Vehiculo implements IVehiculoACombustion{
         this.cantidadDePasajeros = cantidadDePasajeros;
     }
 
+    public Colectivo() throws DatosIncorrectosException{
+        super();
+
+        this.tipoDeCombustible = TipoDeCombustible.Carbon;
+        this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
+        this.cantidadDePasajeros = 0;
+
+    }
+
     @Override
     public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible) {
         this.tipoDeCombustible = tipoDeCombustible;

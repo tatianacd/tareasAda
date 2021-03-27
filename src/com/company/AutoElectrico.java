@@ -16,7 +16,7 @@ public class AutoElectrico extends Vehiculo implements  IVehiculoElectrico{
 
     }
 
-    public AutoElectrico() {
+    public AutoElectrico() throws DatosIncorrectosException{
         super();
         this.amperage = "";
         this.autonomia = "";

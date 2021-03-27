@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DatosIncorrectosException {
         List<Autorizado> autorizados = new ArrayList<>();
         List<Autorizado> autorizados1 = new ArrayList<>();
         List<Vehiculo> vehiculos = new ArrayList<>();
@@ -79,7 +79,7 @@ public class Main {
         dnrpa.listarPropietariosCamiones();
         dnrpa.propietariosDeCamionesOrdenados();
 
-        dnrpa.registrarVehiculo();
+        dnrpa.menu();
 
 
     }

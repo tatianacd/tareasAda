@@ -5,13 +5,13 @@ public abstract class Persona {
     private String direccion;
     private String id;
 
-    public Persona(String nombre, String direccion, String id) {
+    public Persona(String nombre, String direccion, String id) throws DatosIncorrectosException{
         this.nombre = nombre;
         this.direccion = direccion;
         this.id = id;
     }
 
-    public Persona() {
+    public Persona() throws DatosIncorrectosException{
         this.nombre = "";
         this.direccion = "";
         this.id = "";
@@ -30,15 +30,22 @@ public abstract class Persona {
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+
+
     }
 
-    public String getId() {
+    public String getId()  {
+
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String id) throws DatosIncorrectosException{
+        if(String.valueOf(id).length()!=8){
+            throw new DatosIncorrectosException("El DNI debe tener 8 dígitos.");
+        }else{
+            this.id = id;
+        }
+
     }
 
 }

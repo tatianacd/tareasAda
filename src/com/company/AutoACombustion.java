@@ -12,7 +12,7 @@ public class AutoACombustion extends Vehiculo implements IVehiculoACombustion{
         this.tipoDeEnfriamiento = tipoDeEnfriamiento;
     }
 
-    public AutoACombustion() {
+    public AutoACombustion() throws DatosIncorrectosException{
         super();
         this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
         this.tipoDeCombustible = TipoDeCombustible.Petroleo;

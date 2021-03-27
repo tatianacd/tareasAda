@@ -16,6 +16,14 @@ public class Utilitario extends Vehiculo implements IVehiculoACombustion{
 
     }
 
+    public Utilitario() throws DatosIncorrectosException{
+        super();
+        this.tipoDeCombustible = TipoDeCombustible.Carbon;
+        this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
+        this.tipoDeCarga = "";
+
+    }
+
     @Override
     public void setTipoDeCombustible(TipoDeCombustible tipoDeCombustible) {
         this.tipoDeCombustible = tipoDeCombustible;

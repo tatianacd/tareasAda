@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Autorizado extends Persona {
 
-    public Autorizado(String nombre, String direccion, String id) {
+    public Autorizado(String nombre, String direccion, String id) throws DatosIncorrectosException {
         super(nombre, direccion, id);
 
 
     }
 
-    public Autorizado(){
+    public Autorizado() throws DatosIncorrectosException {
         super();
     }
 

@@ -17,7 +17,7 @@ public class Camion extends Vehiculo implements IVehiculoACombustion {
         this.tipoDeCamion = tipoDeCamion;
     }
 
-    public Camion() {
+    public Camion() throws DatosIncorrectosException{
         super();
         this.tipoDeEnfriamiento = TipoDeEnfriamiento.POR_ACEITE;
         this.tipoDeCombustible = TipoDeCombustible.Carbon;

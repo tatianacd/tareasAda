@@ -2,11 +2,11 @@ package com.company;
 
 public class Propietario extends Persona{
 
-    public Propietario(){
+    public Propietario() throws DatosIncorrectosException{
 
     }
 
-    public Propietario(String nombre, String direccion, String id) {
+    public Propietario(String nombre, String direccion, String id) throws DatosIncorrectosException {
         super(nombre, direccion, id);
     }
 
