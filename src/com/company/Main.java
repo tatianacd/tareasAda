@@ -42,8 +42,8 @@ public class Main {
         AutoElectrico autoElectrico1 = new AutoElectrico(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario8, LocalDate.now(), "200v", "300km");
 
         Moto moto = new Moto(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados1, propietario7, LocalDate.now(), TipoDeCombustible.Carbon, TipoDeEnfriamiento.POR_ACEITE, PosicionDelConductor.POSICION_ESTANDAR);
-       //Moto moto1 = new Moto(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario6, LocalDate.of(2021,02,11), TipoDeCombustible.Carbon, TipoDeEnfriamiento.POR_ACEITE);
-       // MotoElectrica motoElectrica = new MotoElectrica(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario5, LocalDate.of(2015,9,12), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
+       Moto moto1 = new Moto(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados1, propietario6, LocalDate.of(2021,02,11), TipoDeCombustible.Carbon, TipoDeEnfriamiento.POR_ACEITE,PosicionDelConductor.POSTURA_DE_CRUCERO);
+       MotoElectrica motoElectrica = new MotoElectrica(Sucursal.Paradise, TipoDeUso.PARTICULAR, autorizados, propietario5, LocalDate.of(2015,9,12), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
         MotoElectrica motoElectrica1 = new MotoElectrica(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.now(), "500 wats", "300km", PosicionDelConductor.POSTURA_DE_CRUCERO);
 
         Colectivo colectivo = new Colectivo(Sucursal.Paradise, TipoDeUso.PROFESIONAL, autorizados, propietario5, LocalDate.of(2021,03,1), TipoDeCombustible.Petroleo, TipoDeEnfriamiento.POR_ACEITE, 22);
@@ -64,6 +64,7 @@ public class Main {
         vehiculos.add(autoElectrico1);
 
         vehiculos.add(moto);
+        vehiculos.add(moto1);
 
         vehiculos.add(motoElectrica1);
 
@@ -74,10 +75,6 @@ public class Main {
         vehiculos.add(utilitario1);
 
         DNRPA dnrpa = new DNRPA(vehiculos);
-
-        dnrpa.listadoGeneralVehiculos();
-        dnrpa.listarPropietariosCamiones();
-        dnrpa.propietariosDeCamionesOrdenados();
 
         dnrpa.menu();
 
