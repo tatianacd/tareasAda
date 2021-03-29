@@ -645,8 +645,6 @@ public class DNRPA {
             System.out.println("Desea agregar otro camion? s = si n = no");
             opSeguir = scanner.next();
 
-            System.out.println(opSeguir.equals("s"));
-
         } while (opSeguir.equals("s"));
 
     }
@@ -912,8 +910,6 @@ public class DNRPA {
             System.out.println("Desea agregar otra moto? s = si n = no");
             opSeguir = scanner.next();
 
-            System.out.println(opSeguir.equals("s"));
-
         } while (opSeguir.equals("s"));
 
     }
@@ -994,8 +990,9 @@ public class DNRPA {
         utilitario.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento7 - 1]);
             System.out.println("Desea agregar otro utilitario? s = si n = no");
             opSeguir = scanner.next();
-
-            System.out.println(opSeguir.equals("s"));
+            System.out.println("Digite el tipo de carga");
+            String tipoDeCarga = scanner.next();
+            utilitario.setTipoDeCarga(tipoDeCarga);
 
         } while (opSeguir.equals("s"));
     }
