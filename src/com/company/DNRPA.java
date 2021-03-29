@@ -383,8 +383,8 @@ public class DNRPA {
                     }
                     break;
                 case 7:
-                    try{
-                    this.registrarUtilitario();
+                    try {
+                        this.registrarUtilitario();
                     } catch (DatosIncorrectosException e) {
                         System.out.println("No se pudo registrar el utilitario debido a que el id debe tener 8 caracteres.");
                     }
@@ -560,88 +560,88 @@ public class DNRPA {
         String opSeguir;
 
         do {
-        Camion camion = new Camion();
+            Camion camion = new Camion();
 
-        for (int contador1 = 0; contador1 <= Sucursal.values().length - 1; contador1++) {
-            System.out.println((contador1 + 1) + ") " + Sucursal.values()[contador1]);
-        }
-        System.out.println("Seleccione la sucursal");
-        String opcionSucursal3 = scanner.next();
-        int opcionDefinitivaSuc3 = Integer.parseInt(opcionSucursal3);
-        camion.setSucursal(Sucursal.values()[opcionDefinitivaSuc3 - 1]);
-
-
-        for (int contador4 = 0; contador4 <= TipoDeUso.values().length - 1; contador4++) {
-            System.out.println((contador4 + 1) + ") " + TipoDeUso.values()[contador4]);
-        }
-        System.out.println("Seleccione el tipo de uso");
-        int opcionTipoDeUso3 = scanner.nextInt();
+            for (int contador1 = 0; contador1 <= Sucursal.values().length - 1; contador1++) {
+                System.out.println((contador1 + 1) + ") " + Sucursal.values()[contador1]);
+            }
+            System.out.println("Seleccione la sucursal");
+            String opcionSucursal3 = scanner.next();
+            int opcionDefinitivaSuc3 = Integer.parseInt(opcionSucursal3);
+            camion.setSucursal(Sucursal.values()[opcionDefinitivaSuc3 - 1]);
 
 
-        camion.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso3 - 1]);
-        String opcionAutorizados3;
-        do {
-
-            Autorizado autorizado = new Autorizado();
-            System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicemente digite null en cada campo y en el id coloque 00000000 siga con la aplicacion)");
-            String nombre = scanner.next();
-            autorizado.setNombre(nombre);
-
-            System.out.println("Ingrese la direccion del autorizado:");
-            String direccion = scanner.next();
-            autorizado.setDireccion(direccion);
-
-            System.out.println("Ingrese el id del autorizado:");
-            String id = scanner.next();
-            autorizado.setId(id);
-
-            autorizados.add(autorizado);
-            System.out.println("Desea agregar mas autorizados? s= si n= no");
-            opcionAutorizados3 = scanner.next();
-        } while (opcionAutorizados3.equalsIgnoreCase("s"));
+            for (int contador4 = 0; contador4 <= TipoDeUso.values().length - 1; contador4++) {
+                System.out.println((contador4 + 1) + ") " + TipoDeUso.values()[contador4]);
+            }
+            System.out.println("Seleccione el tipo de uso");
+            int opcionTipoDeUso3 = scanner.nextInt();
 
 
-        System.out.println("Ingrese el nombre del propietario");
-        String nombrePropietario3 = scanner.next();
+            camion.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso3 - 1]);
+            String opcionAutorizados3;
+            do {
 
-        System.out.println("Ingrese el la direccion del propietario");
-        String direccionPropietario3 = scanner.next();
+                Autorizado autorizado = new Autorizado();
+                System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicemente digite null en cada campo y en el id coloque 00000000 siga con la aplicacion)");
+                String nombre = scanner.next();
+                autorizado.setNombre(nombre);
 
-        System.out.println("Ingrese el id del propietario");
-        String idPropietario3 = scanner.next();
+                System.out.println("Ingrese la direccion del autorizado:");
+                String direccion = scanner.next();
+                autorizado.setDireccion(direccion);
 
-        Propietario propietario3 = new Propietario(nombrePropietario3, direccionPropietario3, idPropietario3);
-        camion.setPropietario(propietario3);
+                System.out.println("Ingrese el id del autorizado:");
+                String id = scanner.next();
+                autorizado.setId(id);
 
-        camion.setFechaDeRegistro(LocalDate.now());
-        for (int contador6 = 0; contador6 <= TipoDeCombustible.values().length - 1; contador6++) {
-            System.out.println((contador6 + 1) + ") " + TipoDeCombustible.values()[contador6]);
-        }
-        System.out.println("Seleccione el tipo de combustible");
-        int opcionTipoDeCombustible3 = scanner.nextInt();
-
-
-        camion.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible3 - 1]);
-
-        for (int contador = 0; contador <= TipoDeEnfriamiento.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeEnfriamiento.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de enfriamiento");
-        int opcionTipoDeEnfriamiento3 = scanner.nextInt();
-
-        for (int contador = 0; contador <= TipoDeCamion.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeCamion.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de camion");
-        int tipoDeCamion = scanner.nextInt();
-
-        camion.setTipoDeCamion(TipoDeCamion.values()[tipoDeCamion - 1]);
+                autorizados.add(autorizado);
+                System.out.println("Desea agregar mas autorizados? s= si n= no");
+                opcionAutorizados3 = scanner.next();
+            } while (opcionAutorizados3.equalsIgnoreCase("s"));
 
 
-        System.out.println("Digite la cantidad de ejes");
-        int cantidadDeEjes = scanner.nextInt();
+            System.out.println("Ingrese el nombre del propietario");
+            String nombrePropietario3 = scanner.next();
 
-        camion.setCantidadDeEjes(cantidadDeEjes);
+            System.out.println("Ingrese el la direccion del propietario");
+            String direccionPropietario3 = scanner.next();
+
+            System.out.println("Ingrese el id del propietario");
+            String idPropietario3 = scanner.next();
+
+            Propietario propietario3 = new Propietario(nombrePropietario3, direccionPropietario3, idPropietario3);
+            camion.setPropietario(propietario3);
+
+            camion.setFechaDeRegistro(LocalDate.now());
+            for (int contador6 = 0; contador6 <= TipoDeCombustible.values().length - 1; contador6++) {
+                System.out.println((contador6 + 1) + ") " + TipoDeCombustible.values()[contador6]);
+            }
+            System.out.println("Seleccione el tipo de combustible");
+            int opcionTipoDeCombustible3 = scanner.nextInt();
+
+
+            camion.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible3 - 1]);
+
+            for (int contador = 0; contador <= TipoDeEnfriamiento.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeEnfriamiento.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de enfriamiento");
+            int opcionTipoDeEnfriamiento3 = scanner.nextInt();
+
+            for (int contador = 0; contador <= TipoDeCamion.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeCamion.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de camion");
+            int tipoDeCamion = scanner.nextInt();
+
+            camion.setTipoDeCamion(TipoDeCamion.values()[tipoDeCamion - 1]);
+
+
+            System.out.println("Digite la cantidad de ejes");
+            int cantidadDeEjes = scanner.nextInt();
+
+            camion.setCantidadDeEjes(cantidadDeEjes);
             System.out.println("Desea agregar otro camion? s = si n = no");
             opSeguir = scanner.next();
 
@@ -653,82 +653,82 @@ public class DNRPA {
         String opSeguir;
 
         do {
-        Colectivo colectivo = new Colectivo();
+            Colectivo colectivo = new Colectivo();
 
-        for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
-        }
-        System.out.println("Seleccione la sucursal");
-        String opcionSucursal4 = scanner.next();
-        int opcionDefinitivaSuc4 = Integer.parseInt(opcionSucursal4);
-        colectivo.setSucursal(Sucursal.values()[opcionDefinitivaSuc4
-                - 1]);
-
-
-        for (int contador4 = 0; contador4 <= TipoDeUso.values().length - 1; contador4++) {
-            System.out.println((contador4 + 1) + ") " + TipoDeUso.values()[contador4]);
-        }
-        System.out.println("Seleccione el tipo de uso");
-        int opcionTipoDeUso4 = scanner.nextInt();
+            for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
+            }
+            System.out.println("Seleccione la sucursal");
+            String opcionSucursal4 = scanner.next();
+            int opcionDefinitivaSuc4 = Integer.parseInt(opcionSucursal4);
+            colectivo.setSucursal(Sucursal.values()[opcionDefinitivaSuc4
+                    - 1]);
 
 
-        colectivo.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso4 - 1]);
-        String opcionAutorizados4;
-        do {
-
-            Autorizado autorizado = new Autorizado();
-            System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada  campo y en el id coloque 00000000 y siga con la aplicacion)");
-            String nombre = scanner.next();
-            autorizado.setNombre(nombre);
-
-            System.out.println("Ingrese la direccion del autorizado:");
-            String direccion = scanner.next();
-            autorizado.setDireccion(direccion);
-
-            System.out.println("Ingrese el id del autorizado:");
-            String id = scanner.next();
-            autorizado.setId(id);
-
-            autorizados.add(autorizado);
-            System.out.println("Desea agregar mas autorizados? s= si n= no");
-            opcionAutorizados4 = scanner.next();
-        } while (opcionAutorizados4.equalsIgnoreCase("s"));
+            for (int contador4 = 0; contador4 <= TipoDeUso.values().length - 1; contador4++) {
+                System.out.println((contador4 + 1) + ") " + TipoDeUso.values()[contador4]);
+            }
+            System.out.println("Seleccione el tipo de uso");
+            int opcionTipoDeUso4 = scanner.nextInt();
 
 
-        System.out.println("Ingrese el nombre del propietario");
-        String nombrePropietario4 = scanner.next();
+            colectivo.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso4 - 1]);
+            String opcionAutorizados4;
+            do {
 
-        System.out.println("Ingrese el la direccion del propietario");
-        String direccionPropietario4 = scanner.next();
+                Autorizado autorizado = new Autorizado();
+                System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada  campo y en el id coloque 00000000 y siga con la aplicacion)");
+                String nombre = scanner.next();
+                autorizado.setNombre(nombre);
 
-        System.out.println("Ingrese el id del propietario");
-        String idPropietario4 = scanner.next();
+                System.out.println("Ingrese la direccion del autorizado:");
+                String direccion = scanner.next();
+                autorizado.setDireccion(direccion);
 
-        Propietario propietario4 = new Propietario(nombrePropietario4, direccionPropietario4, idPropietario4);
-        colectivo.setPropietario(propietario4);
+                System.out.println("Ingrese el id del autorizado:");
+                String id = scanner.next();
+                autorizado.setId(id);
 
-        colectivo.setFechaDeRegistro(LocalDate.now());
-        for (int contador = 0; contador <= TipoDeCombustible.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeCombustible.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de combustible");
-        int opcionTipoDeCombustible4 = scanner.nextInt();
+                autorizados.add(autorizado);
+                System.out.println("Desea agregar mas autorizados? s= si n= no");
+                opcionAutorizados4 = scanner.next();
+            } while (opcionAutorizados4.equalsIgnoreCase("s"));
 
 
-        colectivo.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible4 - 1]);
+            System.out.println("Ingrese el nombre del propietario");
+            String nombrePropietario4 = scanner.next();
 
-        for (int contador = 0; contador <= TipoDeEnfriamiento.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeEnfriamiento.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de enfriamiento");
-        int opcionTipoDeEnfriamiento4 = scanner.nextInt();
+            System.out.println("Ingrese el la direccion del propietario");
+            String direccionPropietario4 = scanner.next();
 
-        colectivo.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento4 - 1]);
+            System.out.println("Ingrese el id del propietario");
+            String idPropietario4 = scanner.next();
 
-        System.out.println("Digite la cantidad de pasajeros");
-        int cantidadDePasajeros = scanner.nextInt();
+            Propietario propietario4 = new Propietario(nombrePropietario4, direccionPropietario4, idPropietario4);
+            colectivo.setPropietario(propietario4);
 
-        colectivo.setCantidadDePasajeros(cantidadDePasajeros);
+            colectivo.setFechaDeRegistro(LocalDate.now());
+            for (int contador = 0; contador <= TipoDeCombustible.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeCombustible.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de combustible");
+            int opcionTipoDeCombustible4 = scanner.nextInt();
+
+
+            colectivo.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible4 - 1]);
+
+            for (int contador = 0; contador <= TipoDeEnfriamiento.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeEnfriamiento.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de enfriamiento");
+            int opcionTipoDeEnfriamiento4 = scanner.nextInt();
+
+            colectivo.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento4 - 1]);
+
+            System.out.println("Digite la cantidad de pasajeros");
+            int cantidadDePasajeros = scanner.nextInt();
+
+            colectivo.setCantidadDePasajeros(cantidadDePasajeros);
             System.out.println("Desea agregar otro colectivo? s = si n = no");
             opSeguir = scanner.next();
 
@@ -742,80 +742,80 @@ public class DNRPA {
         String opSeguir;
 
         do {
-        MotoElectrica motoElectrica = new MotoElectrica();
+            MotoElectrica motoElectrica = new MotoElectrica();
 
-        for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
-        }
-        System.out.println("Seleccione la sucursal");
-        String opcionSucursal5 = scanner.next();
-        int opcionDefinitivaSuc5 = Integer.parseInt(opcionSucursal5);
-        motoElectrica.setSucursal(Sucursal.values()[opcionDefinitivaSuc5 - 1]);
-
-
-        for (int contador = 0; contador <= TipoDeUso.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeUso.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de uso");
-        int opcionTipoDeUso5 = scanner.nextInt();
+            for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
+            }
+            System.out.println("Seleccione la sucursal");
+            String opcionSucursal5 = scanner.next();
+            int opcionDefinitivaSuc5 = Integer.parseInt(opcionSucursal5);
+            motoElectrica.setSucursal(Sucursal.values()[opcionDefinitivaSuc5 - 1]);
 
 
-        motoElectrica.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso5 - 1]);
-        String opcionAutorizados5;
-        do {
-
-            Autorizado autorizado = new Autorizado();
-            System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada campo y en el id coloque 00000000 y siga con la aplicacion)");
-            String nombre = scanner.next();
-            autorizado.setNombre(nombre);
-
-            System.out.println("Ingrese la direccion del autorizado:");
-            String direccion = scanner.next();
-            autorizado.setDireccion(direccion);
-
-            System.out.println("Ingrese el id del autorizado:");
-            String id = scanner.next();
-            autorizado.setId(id);
-
-            autorizados.add(autorizado);
-            System.out.println("Desea agregar mas autorizados? s= si n= no");
-            opcionAutorizados5 = scanner.next();
-        } while (opcionAutorizados5.equalsIgnoreCase("s"));
+            for (int contador = 0; contador <= TipoDeUso.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeUso.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de uso");
+            int opcionTipoDeUso5 = scanner.nextInt();
 
 
-        System.out.println("Ingrese el nombre del propietario");
-        String nombrePropietario5 = scanner.next();
+            motoElectrica.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso5 - 1]);
+            String opcionAutorizados5;
+            do {
 
-        System.out.println("Ingrese el la direccion del propietario");
-        String direccionPropietario5 = scanner.next();
+                Autorizado autorizado = new Autorizado();
+                System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada campo y en el id coloque 00000000 y siga con la aplicacion)");
+                String nombre = scanner.next();
+                autorizado.setNombre(nombre);
 
-        System.out.println("Ingrese el id del propietario");
-        String idPropietario5 = scanner.next();
+                System.out.println("Ingrese la direccion del autorizado:");
+                String direccion = scanner.next();
+                autorizado.setDireccion(direccion);
 
-        Propietario propietario5 = new Propietario(nombrePropietario5, direccionPropietario5, idPropietario5);
-        motoElectrica.setPropietario(propietario5);
+                System.out.println("Ingrese el id del autorizado:");
+                String id = scanner.next();
+                autorizado.setId(id);
 
-        motoElectrica.setFechaDeRegistro(LocalDate.now());
-        for (int contador = 0; contador <= PosicionDelConductor.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + PosicionDelConductor.values()[contador]);
-        }
-        System.out.println("Seleccione la posicion del conductor");
-        int opcionPosicionDelConductor = scanner.nextInt();
-
-
-        motoElectrica.setPosicionDeConduccion(PosicionDelConductor.values()[opcionPosicionDelConductor - 1]);
-
-        System.out.println("Digite  el amperage");
-        String amperage1 = scanner.next();
+                autorizados.add(autorizado);
+                System.out.println("Desea agregar mas autorizados? s= si n= no");
+                opcionAutorizados5 = scanner.next();
+            } while (opcionAutorizados5.equalsIgnoreCase("s"));
 
 
-        motoElectrica.setAmperage(amperage1);
+            System.out.println("Ingrese el nombre del propietario");
+            String nombrePropietario5 = scanner.next();
+
+            System.out.println("Ingrese el la direccion del propietario");
+            String direccionPropietario5 = scanner.next();
+
+            System.out.println("Ingrese el id del propietario");
+            String idPropietario5 = scanner.next();
+
+            Propietario propietario5 = new Propietario(nombrePropietario5, direccionPropietario5, idPropietario5);
+            motoElectrica.setPropietario(propietario5);
+
+            motoElectrica.setFechaDeRegistro(LocalDate.now());
+            for (int contador = 0; contador <= PosicionDelConductor.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + PosicionDelConductor.values()[contador]);
+            }
+            System.out.println("Seleccione la posicion del conductor");
+            int opcionPosicionDelConductor = scanner.nextInt();
 
 
-        System.out.println("Digite la autonomia");
-        String autonomia1 = scanner.next();
+            motoElectrica.setPosicionDeConduccion(PosicionDelConductor.values()[opcionPosicionDelConductor - 1]);
 
-        motoElectrica.setAutonomia(autonomia1);
+            System.out.println("Digite  el amperage");
+            String amperage1 = scanner.next();
+
+
+            motoElectrica.setAmperage(amperage1);
+
+
+            System.out.println("Digite la autonomia");
+            String autonomia1 = scanner.next();
+
+            motoElectrica.setAutonomia(autonomia1);
             System.out.println("Desea agregar otra moto? s = si n = no");
             opSeguir = scanner.next();
 
@@ -828,85 +828,85 @@ public class DNRPA {
         String opSeguir;
 
         do {
-        Moto moto = new Moto();
+            Moto moto = new Moto();
 
-        for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
-        }
-        System.out.println("Seleccione la sucursal");
-        String opcionSucursal6 = scanner.next();
-        int opcionDefinitivaSuc6 = Integer.parseInt(opcionSucursal6);
-        moto.setSucursal(Sucursal.values()[opcionDefinitivaSuc6 - 1]);
-
-
-        for (int contador = 0; contador <= TipoDeUso.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeUso.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de uso");
-        int opcionTipoDeUso6 = scanner.nextInt();
+            for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
+            }
+            System.out.println("Seleccione la sucursal");
+            String opcionSucursal6 = scanner.next();
+            int opcionDefinitivaSuc6 = Integer.parseInt(opcionSucursal6);
+            moto.setSucursal(Sucursal.values()[opcionDefinitivaSuc6 - 1]);
 
 
-        moto.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso6 - 1]);
-        String opcionAutorizados6;
-        do {
-
-            Autorizado autorizado = new Autorizado();
-            System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada campo y en el id coloque 00000000 y siga con la aplicacion)");
-            String nombre = scanner.next();
-            autorizado.setNombre(nombre);
-
-            System.out.println("Ingrese la direccion del autorizado:");
-            String direccion = scanner.next();
-            autorizado.setDireccion(direccion);
-
-            System.out.println("Ingrese el id del autorizado:");
-            String id = scanner.next();
-            autorizado.setId(id);
-
-            autorizados.add(autorizado);
-            System.out.println("Desea agregar mas autorizados? s= si n= no");
-            opcionAutorizados6 = scanner.next();
-        } while (opcionAutorizados6.equalsIgnoreCase("s"));
+            for (int contador = 0; contador <= TipoDeUso.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeUso.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de uso");
+            int opcionTipoDeUso6 = scanner.nextInt();
 
 
-        System.out.println("Ingrese el nombre del propietario");
-        String nombrePropietario6 = scanner.next();
+            moto.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso6 - 1]);
+            String opcionAutorizados6;
+            do {
 
-        System.out.println("Ingrese el la direccion del propietario");
-        String direccionPropietario6 = scanner.next();
+                Autorizado autorizado = new Autorizado();
+                System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada campo y en el id coloque 00000000 y siga con la aplicacion)");
+                String nombre = scanner.next();
+                autorizado.setNombre(nombre);
 
-        System.out.println("Ingrese el id del propietario");
-        String idPropietario6 = scanner.next();
+                System.out.println("Ingrese la direccion del autorizado:");
+                String direccion = scanner.next();
+                autorizado.setDireccion(direccion);
 
-        Propietario propietario6 = new Propietario(nombrePropietario6, direccionPropietario6, idPropietario6);
-        moto.setPropietario(propietario6);
+                System.out.println("Ingrese el id del autorizado:");
+                String id = scanner.next();
+                autorizado.setId(id);
 
-        moto.setFechaDeRegistro(LocalDate.now());
-        for (int contador = 0; contador <= PosicionDelConductor.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + PosicionDelConductor.values()[contador]);
-        }
-        System.out.println("Seleccione la posicion del conductor");
-        int opcionPosicionDelConductor1 = scanner.nextInt();
-
-
-        moto.setPosicionDeConduccion(PosicionDelConductor.values()[opcionPosicionDelConductor1 - 1]);
-
-        for (int contador = 0; contador <= TipoDeCombustible.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeCombustible.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de combustible");
-        int opcionTipoDeCombustible6 = scanner.nextInt();
+                autorizados.add(autorizado);
+                System.out.println("Desea agregar mas autorizados? s= si n= no");
+                opcionAutorizados6 = scanner.next();
+            } while (opcionAutorizados6.equalsIgnoreCase("s"));
 
 
-        moto.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible6 - 1]);
+            System.out.println("Ingrese el nombre del propietario");
+            String nombrePropietario6 = scanner.next();
 
-        for (int contador = 0; contador <= TipoDeEnfriamiento.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeEnfriamiento.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de enfriamiento");
-        int opcionTipoDeEnfriamiento6 = scanner.nextInt();
+            System.out.println("Ingrese el la direccion del propietario");
+            String direccionPropietario6 = scanner.next();
 
-        moto.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento6 - 1]);
+            System.out.println("Ingrese el id del propietario");
+            String idPropietario6 = scanner.next();
+
+            Propietario propietario6 = new Propietario(nombrePropietario6, direccionPropietario6, idPropietario6);
+            moto.setPropietario(propietario6);
+
+            moto.setFechaDeRegistro(LocalDate.now());
+            for (int contador = 0; contador <= PosicionDelConductor.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + PosicionDelConductor.values()[contador]);
+            }
+            System.out.println("Seleccione la posicion del conductor");
+            int opcionPosicionDelConductor1 = scanner.nextInt();
+
+
+            moto.setPosicionDeConduccion(PosicionDelConductor.values()[opcionPosicionDelConductor1 - 1]);
+
+            for (int contador = 0; contador <= TipoDeCombustible.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeCombustible.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de combustible");
+            int opcionTipoDeCombustible6 = scanner.nextInt();
+
+
+            moto.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible6 - 1]);
+
+            for (int contador = 0; contador <= TipoDeEnfriamiento.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeEnfriamiento.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de enfriamiento");
+            int opcionTipoDeEnfriamiento6 = scanner.nextInt();
+
+            moto.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento6 - 1]);
             System.out.println("Desea agregar otra moto? s = si n = no");
             opSeguir = scanner.next();
 
@@ -918,81 +918,82 @@ public class DNRPA {
         String opSeguir;
 
         do {
-        Utilitario utilitario = new Utilitario();
+            Utilitario utilitario = new Utilitario();
 
-        for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
-        }
-        System.out.println("Seleccione la sucursal");
-        String opcionSucursal7 = scanner.next();
-        int opcionDefinitivaSuc7 = Integer.parseInt(opcionSucursal7);
-        utilitario.setSucursal(Sucursal.values()[opcionDefinitivaSuc7 - 1]);
-
-
-        for (int contador = 0; contador <= TipoDeUso.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeUso.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de uso");
-        int opcionTipoDeUso7 = scanner.nextInt();
+            for (int contador = 0; contador <= Sucursal.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + Sucursal.values()[contador]);
+            }
+            System.out.println("Seleccione la sucursal");
+            String opcionSucursal7 = scanner.next();
+            int opcionDefinitivaSuc7 = Integer.parseInt(opcionSucursal7);
+            utilitario.setSucursal(Sucursal.values()[opcionDefinitivaSuc7 - 1]);
 
 
-        utilitario.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso7 - 1]);
-        String opcionAutorizados7;
-        do {
-
-            Autorizado autorizado = new Autorizado();
-            System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada campo y en el id coloque 00000000 y siga con la aplicacion)");
-            String nombre = scanner.next();
-            autorizado.setNombre(nombre);
-
-            System.out.println("Ingrese la direccion del autorizado:");
-            String direccion = scanner.next();
-            autorizado.setDireccion(direccion);
-
-            System.out.println("Ingrese el id del autorizado:");
-            String id = scanner.next();
-            autorizado.setId(id);
-
-            autorizados.add(autorizado);
-            System.out.println("Desea agregar mas autorizados? s= si n= no");
-            opcionAutorizados7 = scanner.next();
-        } while (opcionAutorizados7.equals("s"));
+            for (int contador = 0; contador <= TipoDeUso.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeUso.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de uso");
+            int opcionTipoDeUso7 = scanner.nextInt();
 
 
-        System.out.println("Ingrese el nombre del propietario");
-        String nombrePropietario7 = scanner.next();
+            utilitario.setTipoDeUso(TipoDeUso.values()[opcionTipoDeUso7 - 1]);
+            String opcionAutorizados7;
+            do {
 
-        System.out.println("Ingrese el la direccion del propietario");
-        String direccionPropietario7 = scanner.next();
+                Autorizado autorizado = new Autorizado();
+                System.out.println("Ingrese el nombre del autorizado:(si no tiene autorizados, unicamente digite null en cada campo y en el id coloque 00000000 y siga con la aplicacion)");
+                String nombre = scanner.next();
+                autorizado.setNombre(nombre);
 
-        System.out.println("Ingrese el id del propietario");
-        String idPropietario7 = scanner.next();
+                System.out.println("Ingrese la direccion del autorizado:");
+                String direccion = scanner.next();
+                autorizado.setDireccion(direccion);
 
-        Propietario propietario7 = new Propietario(nombrePropietario7, direccionPropietario7, idPropietario7);
-        utilitario.setPropietario(propietario7);
+                System.out.println("Ingrese el id del autorizado:");
+                String id = scanner.next();
+                autorizado.setId(id);
 
-        utilitario.setFechaDeRegistro(LocalDate.now());
-        for (int contador = 0; contador <= TipoDeCombustible.values().length - 1; contador++) {
-            System.out.println((contador + 1) + ") " + TipoDeCombustible.values()[contador]);
-        }
-        System.out.println("Seleccione el tipo de combustible");
-        int opcionTipoDeCombustible7 = scanner.nextInt();
+                autorizados.add(autorizado);
+                System.out.println("Desea agregar mas autorizados? s= si n= no");
+                opcionAutorizados7 = scanner.next();
+            } while (opcionAutorizados7.equals("s"));
 
 
-        utilitario.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible7 - 1]);
+            System.out.println("Ingrese el nombre del propietario");
+            String nombrePropietario7 = scanner.next();
 
-        for (int contador3 = 0; contador3 <= TipoDeEnfriamiento.values().length - 1; contador3++) {
-            System.out.println((contador3 + 1) + ") " + TipoDeEnfriamiento.values()[contador3]);
-        }
-        System.out.println("Seleccione el tipo de enfriamiento");
-        int opcionTipoDeEnfriamiento7 = scanner.nextInt();
+            System.out.println("Ingrese el la direccion del propietario");
+            String direccionPropietario7 = scanner.next();
 
-        utilitario.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento7 - 1]);
-            System.out.println("Desea agregar otro utilitario? s = si n = no");
-            opSeguir = scanner.next();
+            System.out.println("Ingrese el id del propietario");
+            String idPropietario7 = scanner.next();
+
+            Propietario propietario7 = new Propietario(nombrePropietario7, direccionPropietario7, idPropietario7);
+            utilitario.setPropietario(propietario7);
+
+            utilitario.setFechaDeRegistro(LocalDate.now());
+            for (int contador = 0; contador <= TipoDeCombustible.values().length - 1; contador++) {
+                System.out.println((contador + 1) + ") " + TipoDeCombustible.values()[contador]);
+            }
+            System.out.println("Seleccione el tipo de combustible");
+            int opcionTipoDeCombustible7 = scanner.nextInt();
+
+
+            utilitario.setTipoDeCombustible(TipoDeCombustible.values()[opcionTipoDeCombustible7 - 1]);
+
+            for (int contador3 = 0; contador3 <= TipoDeEnfriamiento.values().length - 1; contador3++) {
+                System.out.println((contador3 + 1) + ") " + TipoDeEnfriamiento.values()[contador3]);
+            }
+            System.out.println("Seleccione el tipo de enfriamiento");
+            int opcionTipoDeEnfriamiento7 = scanner.nextInt();
+            utilitario.setTipoDeEnfriamiento(TipoDeEnfriamiento.values()[opcionTipoDeEnfriamiento7 - 1]);
+
             System.out.println("Digite el tipo de carga");
             String tipoDeCarga = scanner.next();
             utilitario.setTipoDeCarga(tipoDeCarga);
+
+            System.out.println("Desea agregar otro utilitario? s = si n = no");
+            opSeguir = scanner.next();
 
         } while (opSeguir.equals("s"));
     }
