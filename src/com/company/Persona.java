@@ -41,7 +41,7 @@ public abstract class Persona {
 
     public void setId(String id) throws DatosIncorrectosException{
         if(String.valueOf(id).length()!=8){
-            throw new DatosIncorrectosException("El DNI debe tener 8 dígitos.");
+            throw new DatosIncorrectosException("El id debe tener 8 dígitos.");
         }else{
             this.id = id;
         }
