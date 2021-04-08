@@ -2,7 +2,7 @@ package com.company;
 
 import java.time.LocalDate;
 import java.util.List;
-
+// esto es un comentario desde el cel
 public class AutoACombustion extends Vehiculo implements IVehiculoACombustion{
     private TipoDeCombustible tipoDeCombustible;
     private TipoDeEnfriamiento tipoDeEnfriamiento;
